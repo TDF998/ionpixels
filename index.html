@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>离子像素科技品牌域名</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/easeljs.min.js"></script>
+  <script src="./css/tailwind.css"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+  <script src="./js/swiper-bundle.min.js"></script>
+  <head>
+    <!-- 基础 favicon -->
+    <link rel="icon" href="icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="icon/favicon.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/favicon-64x64.png" type="image/png" sizes="64x64">
+  
+    <!-- 苹果 Touch Icon（Safari/添加到主屏幕） -->
+    <link rel="apple-touch-icon" href="icon/favicon.png">
+  
+    <!-- PWA 安卓图标 -->
+    <link rel="manifest" href="icon/favicon.png">
+  </head>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#01011e',
+            secondary: '#4F46E5',
+            accent: '#60A5FA',
+            light: '#F3F4F6',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      /* 毛玻璃效果 */
+      .backdrop-blur-custom {
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+      /* 整屏高度 */
+      .screen-h {
+        height: 100vh;
+      }
+      /* 文字粒子容器 */
+      .particle-text {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        margin: 2rem 0;
+      }
+      /* 导航激活/hover样式 */
+      .nav-link {
+        @apply px-4 py-2 transition-all duration-300 text-light hover:text-accent active:text-secondary;
+      }
+      /* 按钮通用样式 */
+      .btn {
+        @apply px-8 py-3 rounded-lg font-medium transition-all duration-300 text-light;
+      }
+      .btn-primary {
+        @apply bg-secondary hover:bg-secondary/90 active:bg-secondary/80;
+      }
+      .btn-outline {
+        @apply border-2 border-accent hover:bg-accent/20 active:bg-accent/30;
+      }
+      /* 模块卡片样式 */
+      .card {
+        @apply bg-primary/60 backdrop-blur-custom border border-light/10 rounded-xl p-6 transition-all duration-300 hover:border-accent/50 hover:scale-105;
+      }
+    }
+    /* 重置默认样式 */
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .logo{background: linear-gradient(135deg, #ffffffe0, #ffffff4f);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
+
+        /* 页面容器：用 flex 布局，垂直排列，占满整个高度 */
+        .page-container {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 页面主体：自动占满剩余空间，把 footer 挤到最底部 */
+        .main-content {
+            flex: 1;
+            /* 下面是测试内容，实际使用时替换为你的页面正文 */
+        }
+
+        /* 页脚整体样式 */
+        footer {
+          background-color: #01011b; width:100%;
+            color: #ecf0f1; /* 浅文字色 */
+            padding: 30px 20px 20px;/*  上下内边距 */
+             text-align:center;
+        }
+
+        /* 页脚内容容器（居中+限制宽度） */
+        .footer-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap; /* 响应式换行 */
+            justify-content: space-between;
+        }
+
+        /* 页脚各列样式 */
+        .footer-column {
+            flex: 1;
+            min-width: 250px; /* 手机端最小宽度，避免挤在一起 */
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+
+        /* 列标题样式 */
+        .footer-column h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffffff; /* 标题下划线 */
+            display: inline-block;
+        }
+
+        /* 链接列表样式 */
+        .footer-column ul {
+            list-style: none;
+            
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s; /*  hover 过渡效果 */
+        }
+
+        .footer-column ul li a:hover {
+            color: #3498db; /*  hover 变蓝色 */
+        }
+
+        /* 联系方式样式 */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .contact-item i {
+            font-size: 16px;
+            margin-right: 10px;
+            color: #ffffff;
+        }
+
+        /* 版权信息栏 */
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 10px;
+            border-top: 1px solid #ffffff20;
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+
+        /* 响应式适配（手机端） */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-column {
+                text-align: center;
+                min-width: 100%;
+            }
+        }
+
+      /* 弹幕舞台 — 占据剩余高度 */
+      .danmaku-stage {
+            width: 100%;
+            flex: 1;                 /* 自动填充剩余空间 */
+            height: calc(100% - 250px);           /* 防止flex溢出 */
+            background: radial-gradient(circle at 30% 40%, #030333, #01011b);
+            box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 滚动文字容器 */
+        .scrolling-words {
+            position: relative;
+            width: 100%;
+            height:100%;             /* 充满父容器 */
+            overflow: visible; 
+        }
+
+
+        /* 每一个弹幕项：统一白色，固定大小，圆角外框+1px描边 */
+        .word {
+            position: absolute;
+            white-space: nowrap;
+            left: 100%;                    /* 起始位于右侧外部 */
+            
+            /* 文字统一白色、固定大小 */
+            color: #ffffff;
+            font-size: 16px;                /* 统一大小，可调整，如希望更大或更小可改此值 */
+            font-weight: 400;
+            
+            /* 圆角外框 + 1px描边 (边框实现) */
+            border: 1px solid rgba(255, 255, 255, 0.4);   /* 半透明白色描边，增加层次感 */
+            border-radius: 30px;             /* 圆角外框，数值大一点保证圆润 */
+            padding: 8px 20px;               /* 内边距，让文字与外框有呼吸空间 */
+            background-color: transparent;   /* 完全透明背景 */
+            
+            /* 可选微弱的文字阴影，增强可读性（不影响整体要求） */
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            
+            /* 透明度调节 —— 让每个框有深浅不同的透明感，背景透出，符合“透明背景”要求 */
+            opacity: 0.8;                     /* 基础透明度，后续通过内联随机覆盖 */
+            
+            /* 动画属性 - 拆开写，避免被覆盖 */
+            animation-name: scroll-left;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            
+            /* 确保文字可见 */
+            z-index: 10;
+            
+            /* 保证框边缘平滑 */
+            box-sizing: border-box;
+            line-height: 1.2;
+            letter-spacing: 0.05em;
+        }
+        /* 滚动动画 */
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-250vw);   /* 移动足够远保证任何长度文字完全移出左侧 */
+            }
+        }
+
+  </style>
+</head>
+<body class="bg-primary text-light overflow-hidden ">
+
+  <!-- 导航栏 - 毛玻璃效果 -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-primary/40 backdrop-blur-custom border-b border-light/10 py-4">
+    <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
+      <!-- Logo -->
+      
+      <div class="text-2xl font-bold text-accent logo"><img style="float: left; margin-right: 10px;" src="./icon/logo.png" width="36" height="36" />IONPIXELS.COM</div>
+      <!-- 导航链接 - 桌面端 -->
+      <div class="hidden md:flex items-center gap-2">
+        <a href="#screen1" class="nav-link">首页</a>
+        <a href="#screen2" class="nav-link">商业价值</a>
+        <a href="#screen3" class="nav-link">特色优势</a>
+        <a href="#screen4" class="nav-link">联系方式</a>
+      </div>
+      <!-- 移动端菜单按钮 -->
+      <button class="md:hidden text-2xl" id="menuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <!-- 移动端导航菜单 -->
+    <div class="md:hidden hidden bg-primary/80 backdrop-blur-custom w-full absolute top-full left-0 border-b border-light/10 py-4" id="mobileMenu">
+      <div class="container mx-auto px-4 flex flex-col gap-3">
+        <a href="#screen1" class="nav-link">首页</a>
+        <a href="#screen2" class="nav-link">商业价值</a>
+        <a href="#screen3" class="nav-link">特色优势</a>
+        <a href="#screen4" class="nav-link">联系方式</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 整屏滚动容器 -->
+  <div class="swiper mySwiper h-screen">
+    <div class="swiper-wrapper">
+      <!-- 第一屏：首页Banner -->
+      <div class="hero-container swiper-slide screen-h flex items-center justify-center" id="screen1">
+        <canvas id="heroCanvas" width="1920" height="900"></canvas>
+        <div class="content-overlay">
+          <div class="cta-container">
+            <a href="#" class="cta-button primary-cta" id="buyBtn">立即购买</a>
+            <a href="#" class="cta-button secondary-cta" id="valueBtn">了解价值</a>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <div class="mouse-icon"></div>
+          <span>Scroll to explore</span>
+        </div>
+      </div>
+
+      <!-- 第二屏：商业价值 -->
+      <div class="swiper-slide screen-h flex items-center justify-center py-20" id="screen2">
+        <div class="container mx-auto px-4 md:px-8 z-10">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">域名商业价值</h2>
+            <p class="text-lg text-light/80 max-w-2xl mx-auto">ionpixels.com 拥有卓越的品牌潜力和市场价值</p>
+          </div>
+          <!-- 四大价值卡片 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <!-- 技术感强 -->
+            <div class="card flex flex-col items-center text-light bianshou">
+              <div class="text-4xl text-accent mb-4"><i class="fas fa-rocket"></i></div>
+              <h3 class="text-xl font-semibold mb-3">技术感强</h3>
+              <p class="text-light/70">ion和pixels都具有强烈的技术和科技感，适合互联网、软件、游戏等行业</p>
+            </div>
+            <!-- 易记性强 -->
+            <div class="card flex flex-col items-center text-light bianshou">
+              <div class="text-4xl text-accent mb-4"><i class="fas fa-brain"></i></div>
+              <h3 class="text-xl font-semibold mb-3">易记性强</h3>
+              <p class="text-light/70">简短易记，朗朗上口，便于用户记忆和传播</p>
+            </div>
+            <!-- 品牌潜力 -->
+            <div class="card flex flex-col items-center text-light bianshou">
+              <div class="text-4xl text-accent mb-4"><i class="fas fa-gem"></i></div>
+              <h3 class="text-xl font-semibold mb-3">品牌潜力</h3>
+              <p class="text-light/70">具备强大的品牌塑造能力，适合打造高端科技品牌形象</p>
+            </div>
+            <!-- 投资价值 -->
+            <div class="card flex flex-col items-center text-light bianshou">
+              <div class="text-4xl text-accent mb-4"><i class="fas fa-crown"></i></div>
+              <h3 class="text-xl font-semibold mb-3">投资价值</h3>
+              <p class="text-light/70">优质域名资产，具有长期投资和增值潜力 图像传感 / 光电 / AI 视觉</p>
+            </div>
+          </div>
+          <p class="text-light/70 " style="text-align: center;margin-top: 30px;">
+            后缀：.com（全球通用，价值最高）<br>
+            长度：9 字符（ion+pixels），属于易记、品牌友好长度<br>
+            含义：ion（离子 / 电离）+ pixels（像素），直接指向图像传感、光电、AI 视觉、半导体、显示技术等高增长科技赛道，行业属性极强、无歧义<br>
+            品相：纯英文组合、无数字 / 符号、发音流畅（ion-pixels），适合做科技公司 / 产品品牌<br>
+            市场热度：pixels 是图像 / 视觉领域高频词，ion 是半导体 / 传感核心词，双关键词叠加，适配终端买家</p>
+        </div>
+      </div>
+
+      <!-- 第三屏：特色优势 -->
+      <div class="swiper-slide screen-h flex items-center justify-center py-20" id="screen3">
+        <div class="container mx-auto px-4 md:px-8 z-10">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">域名特色优势</h2>
+            <p class="text-lg text-light/80 max-w-2xl mx-auto">ionpixels.com 具备多项独特优势，是理想的品牌域名选择</p>
+          </div>
+          <!-- 优势内容：左图右文 -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- 图片占位 -->
+            <div class="bg-primary/60 backdrop-blur-custom border-light/10 flex items-center justify-center">   
+                <img style="border-radius: 16px;" src="./icon/bg1.jpg">
+            </div>
+            <!-- 四大优势 -->
+            <div class="flex flex-col gap-8 ">
+              <div class="bg-primary/60 backdrop-blur-custom border border-light/10 rounded-xl p-6 hover:border-accent/50 transition-all bianshou">
+                <h3 class="text-xl font-semibold mb-2 flex items-center gap-3">
+                  <span class="text-accent">01</span>
+                  国际化通用
+                </h3>
+                <p class="text-light/70">英文域名便于国际化推广，适合全球市场拓展</p>
+              </div>
+              <div class="bg-primary/60 backdrop-blur-custom border border-light/10 rounded-xl p-6 hover:border-accent/50 transition-all bianshou">
+                <h3 class="text-xl font-semibold mb-2 flex items-center gap-3">
+                  <span class="text-accent">02</span>
+                  行业匹配度高
+                </h3>
+                <p class="text-light/70">特别适合科技、互联网、软件开发、数字媒体等行业</p>
+              </div>
+              <div class="bg-primary/60 backdrop-blur-custom border border-light/10 rounded-xl p-6 hover:border-accent/50 transition-all bianshou">
+                <h3 class="text-xl font-semibold mb-2 flex items-center gap-3">
+                  <span class="text-accent">03</span>
+                  SEO友好
+                </h3>
+                <p class="text-light/70">关键词相关性好，有助于搜索引擎优化和品牌搜索</p>
+              </div>
+              <div class="bg-primary/60 backdrop-blur-custom border border-light/10 rounded-xl p-6 hover:border-accent/50 transition-all bianshou">
+                <h3 class="text-xl font-semibold mb-2 flex items-center gap-3">
+                  <span class="text-accent">04</span>
+                  稀缺性保障
+                </h3>
+                <p class="text-light/70">com顶级域名，全球通用，具有不可再生的稀缺价值</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第四屏：联系我们 -->
+      <div class="swiper-slide screen-h flex items-center justify-center py-20" id="screen4">
+        <div class="container mx-auto px-4 md:px-8 z-10">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">联系我们</h2>
+            <p class="text-lg text-light/80 max-w-2xl mx-auto">如有意购买或了解更多信息，请通过以下方式联系我们</p>
+          </div>
+          <!-- 联系内容：左联系方式 右域名信息 -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- 联系方式 -->
+            <div class="bg-primary/60 backdrop-blur-custom border border-light/10 rounded-2xl p-8 flex flex-col items-center gap-8">
+              <div class="text-5xl text-accent mb-4"><i class="fas fa-contact-card"></i></div>
+              <!-- 邮箱 -->
+              <div class="flex items-center gap-4 w-full max-w-md">
+                <div class="text-2xl text-accent w-10 text-center"><i class="fas fa-envelope"></i></div>
+                <p class="text-lg">907488570@qq.com</p>
+              </div>
+              <!-- 电话 -->
+              <div class="flex items-center gap-4 w-full max-w-md">
+                <div class="text-2xl text-accent w-10 text-center"><i class="fas fa-phone"></i></div>
+                <p class="text-lg">15733120402&nbsp;需注明来意</p>
+              </div>
+              <!-- 二维码 -->
+              <div class="bg-light p-2 rounded-lg">
+                <div class="w-40 h-40 bg-primary/80 flex items-center justify-center text-light/50">
+                  <img src="./icon/wx.jpg" width="160" height="160">
+                </div>
+              </div>
+            </div>
+            <!-- 域名信息 -->
+            <div class="bg-primary/60 backdrop-blur-custom border border-light/10 rounded-2xl p-8">
+              <h3 class="text-2xl font-semibold mb-6 text-center">域名信息</h3>
+              <div class="grid grid-cols-2 gap-6">
+                <p class="text-light/70">域名:</p>
+                <p class="font-medium">ionpixels.com&nbsp;/&nbsp;ionpixels.cn</p>
+                <p class="text-light/70">注册商:</p>
+                <p class="font-medium">阿里云</p>
+                <p class="text-light/70">注册时间:</p>
+                <p class="font-medium">2026年3月</p>
+                <p class="text-light/70">到期时间:</p>
+                <p class="font-medium">无固定期限</p>
+                <p class="text-light/70">状态:</p>
+                <p class="font-medium text-accent">可转让</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+            <!-- 第五屏：弹幕+页脚 -->
+<div class="swiper-slide" id="screen" style="position: relative; overflow: hidden; background: #01011e;">
+  <div class="page-container" style="height: 100%; display: flex; flex-direction: column;">
+      <!-- 弹幕区域 - 占据剩余空间 -->
+      <div class="danmaku-stage" style="flex: 1; min-height: 0;">
+          <div class="scrolling-words" id="danmakuContainer" style="height: 100%; position: relative;">
+              <!-- 弹幕由JS注入 -->
+          </div>
+      </div>
+      
+      <!-- 页脚区域 - 固定高度 -->
+      <footer style="flex-shrink: 0;">
+          <div class="bottom-content">
+              <div class="bottom-inner">
+                  <div class="footer-container">
+                      <!-- 第一列：快速导航 -->
+                      <div class="footer-column">
+                          <h3>快速导航</h3>
+                          <ul>
+                              <li><a href="https://ab8.site/Qilinev/index.html">其他域名</a></li>
+                              <li><a href="/about">商业价值</a></li>
+                              <li><a href="/service">特色优势</a></li>
+                              <li><a href="/contact">联系我们</a></li>
+                          </ul>
+                      </div>
+          
+                      <!-- 第二列：联系方式 -->
+                      <div class="footer-column">
+                          <h3>联系我们</h3>
+                          <ul>
+                              <li><i class="fas fa-map-marker-alt"></i>
+                                  <span>北京市朝阳区某某大厦1008室</span>
+                              </li>
+                              <li>
+                                  <i class="fas fa-phone"></i>
+                                  <span>15733120402（需注明来意）</span>
+                              </li>
+                              <li>
+                                  <i class="fas fa-envelope"></i>
+                                  <span>907488570@qq.com</span>
+                              </li>
+                          </ul>
+                      </div>
+          
+                      <!-- 第三列：关注我们 -->
+                      <div class="footer-column">
+                          <h3>关注我们</h3>
+                          <ul>
+                              <li><a href="#"><i class="fab fa-weixin"></i> 微信公众号</a></li>
+                              <li><a href="#"><i class="fab fa-weibo"></i> 新浪微博</a></li>
+                              <li><a href="#"><i class="fab fa-weixin"></i> WeChat：15733120402</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <!-- 版权信息 -->
+                  <div class="copyright">
+                      <p>© 2026 离子像素科技有限公司 版权所有 | 京ICP备12345678号-1</p>
+                      <p>本网站支持IPv6访问 | 隐私政策 | 服务条款</p>
+                  </div>
+              </div>
+          </div>
+      </footer>
+  </div>
+</div>
+    </div>
+    <!-- 滚动导航点 -->
+    <div class="swiper-pagination swiper-pagination-vertical swiper-pagination-right z-40"></div>
+  </div>
+  <script src="./js/script.js"></script>
+  <script>
+    // 移动端菜单切换
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = menuBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    // 整屏滚动配置
+    const swiper = new Swiper('.mySwiper', {
+      direction: 'vertical',
+      slidesPerView: 1,
+      spaceBetween: 0,
+      mousewheel: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+    // 按钮跳转
+    document.getElementById('buyBtn').addEventListener('click', () => {
+      swiper.slideTo(3); // 跳转到第四屏
+      mobileMenu.classList.add('hidden');
+      menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+    });
+    document.getElementById('valueBtn').addEventListener('click', () => {
+      swiper.slideTo(1); // 跳转到第二屏
+      mobileMenu.classList.add('hidden');
+      menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+    });
+
+    // 导航链接跳转
+    document.querySelectorAll('.nav-link').forEach((link, index) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        swiper.slideTo(index);
+        mobileMenu.classList.add('hidden');
+        menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+      });
+    });
+
+    // Three.js 粒子背景和粒子文字实现
+    window.addEventListener('load', () => {
+      // 1. 粒子背景
+      const particleBg = initParticleBg();
+      // 2. 粒子文字
+      initParticleText();
+
+      // 窗口大小适配
+      window.addEventListener('resize', () => {
+        particleBg.camera.aspect = window.innerWidth / window.innerHeight;
+        particleBg.camera.updateProjectionMatrix();
+        particleBg.renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    });
+
+    // 初始化粒子背景
+    function initParticleBg() {
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ 
+        canvas: document.getElementById('particle-bg'),
+        alpha: true,
+        antialias: true
+      });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setClearColor(0x01011e, 0);
+
+      // 粒子组
+      const particlesGeometry = new THREE.BufferGeometry();
+      const particlesCount = 1500;
+      const posArray = new Float32Array(particlesCount * 3);
+
+      for (let i = 0; i < particlesCount * 3; i++) {
+        posArray[i] = (Math.random() - 0.5) * 200;
+      }
+
+      particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+      const particlesMaterial = new THREE.PointsMaterial({
+        size: 0.5,
+        color: 0x60A5FA,
+        transparent: true,
+        opacity: 0.7
+      });
+      const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+      scene.add(particles);
+
+      camera.position.z = 30;
+
+      // 流星效果
+      let meteors = [];
+      function createMeteor() {
+        const meteorGeometry = new THREE.BufferGeometry();
+        const meteorCount = 50;
+        const meteorPos = new Float32Array(meteorCount * 3);
+        for (let i = 0; i < meteorCount * 3; i++) {
+          meteorPos[i] = (Math.random() - 0.5) * 10;
+        }
+        meteorGeometry.setAttribute('position', new THREE.BufferAttribute(meteorPos, 3));
+        const meteorMaterial = new THREE.PointsMaterial({
+          size: 1,
+          color: 0xffffff,
+          transparent: true,
+          opacity: 0.9
+        });
+        const meteor = new THREE.Points(meteorGeometry, meteorMaterial);
+        meteor.position.x = (Math.random() - 0.5) * 200;
+        meteor.position.y = (Math.random() - 0.5) * 200;
+        meteor.position.z = (Math.random() - 0.5) * 200;
+        meteor.speed = Math.random() * 5 + 2;
+        scene.add(meteor);
+        meteors.push(meteor);
+        // 移除流星
+        setTimeout(() => {
+          scene.remove(meteor);
+          meteors = meteors.filter(m => m !== meteor);
+        }, 3000);
+      }
+      // 随机生成流星
+      setInterval(createMeteor, 1500);
+
+      // 动画循环
+      function animate() {
+        requestAnimationFrame(animate);
+        // 粒子旋转
+        particles.rotation.x += 0.0005;
+        particles.rotation.y += 0.0005;
+        // 流星移动
+        meteors.forEach(meteor => {
+          meteor.position.x += meteor.speed;
+          meteor.position.y -= meteor.speed * 0.5;
+          meteor.opacity -= 0.003;
+        });
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      return { scene, camera, renderer };
+    }
+
+    // 初始化粒子文字
+    function initParticleText() {
+      const container = document.getElementById('particleText');
+      const scene = new THREE.Scene();
+      const camera = new THREE.OrthographicCamera(
+        container.clientWidth / -2,
+        container.clientWidth / 2,
+        container.clientHeight / 2,
+        container.clientHeight / -2,
+        1,
+        1000
+      );
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      container.appendChild(renderer.domElement);
+
+      camera.position.z = 100;
+
+      // 加载字体
+      const fontLoader = new THREE.FontLoader();
+      fontLoader.load('https://cdn.jsdelivr.net/npm/three@0.154.0/examples/fonts/helvetiker_bold.typeface.json', (font) => {
+        // 创建文字几何体
+        const textGeometry = new THREE.TextGeometry('ionpixels.com', {
+          font: font,
+          size: 30,
+          height: 5,
+          curveSegments: 12,
+          bevelEnabled: true,
+          bevelThickness: 2,
+          bevelSize: 1,
+          bevelOffset: 0,
+          bevelSegments: 5
+        });
+        textGeometry.center();
+
+        // 提取文字顶点作为粒子
+        const vertices = textGeometry.attributes.position.array;
+        const particlesGeometry = new THREE.BufferGeometry();
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
+
+        // 粒子材质
+        const particlesMaterial = new THREE.PointsMaterial({
+          size: 4,
+          color: 0x60A5FA,
+          transparent: true,
+          opacity: 0.9
+        });
+
+        // 粒子对象
+        const textParticles = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(textParticles);
+
+        // 鼠标交互：粒子散开和聚合
+        let isScattered = false;
+        const originalPos = [...vertices];
+        const scatterPos = [...vertices];
+
+        // 初始化散开位置
+        for (let i = 0; i < scatterPos.length; i++) {
+          scatterPos[i] += (Math.random() - 0.5) * 50;
+        }
+
+        container.addEventListener('mouseenter', () => {
+          if (!isScattered) {
+            isScattered = true;
+            animateParticles(originalPos, scatterPos);
+          }
+        });
+
+        container.addEventListener('mouseleave', () => {
+          if (isScattered) {
+            isScattered = false;
+            animateParticles(scatterPos, originalPos);
+          }
+        });
+
+        // 粒子动画
+        function animateParticles(from, to) {
+          let t = 0;
+          function update() {
+            t += 0.02;
+            if (t > 1) t = 1;
+            for (let i = 0; i < vertices.length; i++) {
+              vertices[i] = from[i] + (to[i] - from[i]) * t;
+            }
+            particlesGeometry.attributes.position.needsUpdate = true;
+            if (t < 1) requestAnimationFrame(update);
+          }
+          update();
+        }
+
+        // 动画循环
+        function animate() {
+          requestAnimationFrame(animate);
+          renderer.render(scene, camera);
+        }
+        animate();
+      });
+
+      // 容器大小适配
+      window.addEventListener('resize', () => {
+        camera.left = container.clientWidth / -2;
+        camera.right = container.clientWidth / 2;
+        camera.top = container.clientHeight / 2;
+        camera.bottom = container.clientHeight / -2;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
+    }
+
+    (function() {
+            // 基础词组 —— 延续忘我氛围
+            const baseWords = [
+            "量子", "像素", "离子", "矩阵", "算力", "渲染", "裂变", "像素", "帧", "纳米",
+            "⚛️", "🖥️", "📡", "矢量", "光栅", "像素", "光量子", "等离子", "带宽", "分辨率",
+            "比特", "缓存", "像素点", "熵增", "暗能量", "光子", "像素流", "掩码", "像素级", "数据帧",
+            "解码", "折射", "纯净码", "空指针", "终端", "像素映射", "轮廓线", "算法", "吞吐量", "坍缩",
+            "未渲染", "低代码", "无序码", "混沌态", "静默帧", "极简像素", "透明通道", "褪色算法", "帧抖动", "自编码",
+            "归零点", "静默流", "虚数", "超导", "像素雾", "冷光", "浮点数", "纳秒", "瞬态", "量子跃迁"
+            ];
+
+            // 生成长短不一的短语 (丰富内容但保持白色)
+            function randomPhrase() {
+                const r = Math.random();
+                if (r < 0.35) {
+                    // 单个词
+                    return baseWords[Math.floor(Math.random() * baseWords.length)];
+                } else if (r < 0.7) {
+                    // 两个词组合
+                    const i1 = Math.floor(Math.random() * baseWords.length);
+                    const i2 = Math.floor(Math.random() * baseWords.length);
+                    return baseWords[i1] + ' · ' + baseWords[i2];
+                } else {
+                    // 三个词组合
+                    const i1 = Math.floor(Math.random() * baseWords.length);
+                    const i2 = Math.floor(Math.random() * baseWords.length);
+                    const i3 = Math.floor(Math.random() * baseWords.length);
+                    return baseWords[i1] + ' ' + baseWords[i2] + ' ' + baseWords[i3];
+                }
+            }
+
+            // 随机透明度：用来控制整个框（文字+边框）的透明程度，实现深浅不同
+            // 范围 0.35 ~ 0.95，既有透明层次又不完全消失
+            function randomOpacity() {
+                return (0.2 + Math.random() * 0.6).toFixed(2); // 0.2 ~ 0.8
+            }
+
+            // 随机垂直位置 (top) 从 -5% 到 105% 让文字溢出边界更有层次
+            function randomTop() {
+                return (Math.random() * 95 - 5).toFixed(1) + '%';
+            }
+
+            // 随机动画时长 (速度) 12s ~ 36s
+            function randomDuration() {
+                return (16 + Math.random() * 26).toFixed(1) + 's';
+            }
+
+            // 随机延迟 0s ~ 16s 错峰
+            function randomDelay() {
+                return (Math.random() * 20).toFixed(1) + 's';
+            }
+
+            // 生成弹幕数量 80~120 条，重叠丰富
+            const wordCount = 80 + Math.floor(Math.random() * 40); // 80~120
+
+            const container = document.getElementById('danmakuContainer');
+            container.innerHTML = ''; // 清空占位
+
+            for (let i = 0; i < wordCount; i++) {
+                const wordDiv = document.createElement('div');
+                wordDiv.className = 'word';
+
+                // 文字内容
+                wordDiv.textContent = randomPhrase();
+
+                // 设置透明度（深浅不同）
+                wordDiv.style.opacity = randomOpacity();
+
+                // 垂直位置
+                wordDiv.style.top = randomTop();
+
+                // 动画时长与延迟
+                wordDiv.style.animationDuration = randomDuration();
+                wordDiv.style.animationDelay = randomDelay();
+
+                // 为了让边框也有深浅变化，但边框颜色保持白色半透明，这样随opacity整体变化已经足够
+                // 也可以个别微调边框透明度，但整体opacity已经同时作用于文字和边框，符合需求。
+                // 若想边框稍明显一点，可额外设置 border-color 为 hsla(0,0%,100%,0.5~0.9) 不变，整体透明度控制深浅。
+                // 维持原有 .word 的 border: 1px solid rgba(255,255,255,0.6); 不变，opacity调整个框。
+
+                // 可选：随机细微调整边框圆角或内边距？不用，保持统一更显秩序中的变化。
+                // 唯一变化的是透明度，深浅不同，背景透过程度不同。
+
+                container.appendChild(wordDiv);
+            }
+
+            // 额外加一小批长句或符号，丰富视觉效果，依然白色统一字号
+            const extraPhrases = [
+              "··· 量子之域 ···",
+              "⌨️ ⌘ ⌥ ⇧ ⇪",
+              "『 元 』",
+              "…… 像素 ……",
+              "———— 离子流 ————",
+              "⌘ ⌃ ⌦ ⌫ ⌧",
+              "⊹ ⨯ ⊹ 码 ⊹ ⨯ ⊹",
+              "⸻ 纳 ⸻ 秒 ⸻",
+              "······ 帧 率 ······",
+              "▽ 数 据 的 载 体 ▽"
+            ];
+            for (let i = 0; i < 15; i++) {
+                const extraDiv = document.createElement('div');
+                extraDiv.className = 'word';
+                const phrase = extraPhrases[Math.floor(Math.random() * extraPhrases.length)];
+                // 偶尔再加一个基础词防止太单调
+                extraDiv.textContent = phrase + (Math.random() > 0.6 ? ' ' + baseWords[Math.floor(Math.random() * baseWords.length)] : '');
+                extraDiv.style.opacity = (0.3 + Math.random() * 0.7).toFixed(2); // 深浅不一
+                extraDiv.style.top = randomTop();
+                extraDiv.style.animationDuration = randomDuration();
+                extraDiv.style.animationDelay = randomDelay();
+                container.appendChild(extraDiv);
+            }
+
+            // 在您的弹幕生成代码中找到这一部分
+            for (let i = 0; i < wordCount; i++) {
+            const wordDiv = document.createElement('div');
+            wordDiv.className = 'word';
+    
+            // 文字内容
+            wordDiv.textContent = randomPhrase();
+    
+            // 设置随机背景色（新增）
+            const bgColors = [
+            'rgba(255, 255, 255, 0.2)',  // 白色
+            'rgba(59, 130, 246, 0.6)',  // 蓝色
+            'rgba(16, 185, 129, 0.6)',  // 绿色
+            'rgba(245, 158, 11, 0.6)',  // 橙色
+            'rgba(168, 85, 247, 0.6)'   // 紫色
+    ];
+            const randomColor = bgColors[Math.floor(Math.random() * bgColors.length)];
+            wordDiv.style.backgroundColor = randomColor;
+    
+            // 其他样式设置...
+            wordDiv.style.opacity = randomOpacity();
+            wordDiv.style.top = randomTop();
+            wordDiv.style.animationDuration = randomDuration();
+            wordDiv.style.animationDelay = randomDelay();
+            
+            container.appendChild(wordDiv);
+}
+            console.log('弹幕生成数量:', document.querySelectorAll('.word').length);
+            console.log('弹幕容器高度:', document.querySelector('.scrolling-words')?.offsetHeight);
+            console.log('弹幕舞台高度:', document.querySelector('.danmaku-stage')?.offsetHeight);
+
+        })();
+  </script>
+</body>
+</html>
