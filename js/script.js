@@ -139,7 +139,7 @@ function createTextParticles() {
   stage.addChild(textContainer);
 
   const text1 = new createjs.Text("离子像素", "bold 140px 微软雅黑, Microsoft YaHei", "#ffffff");
-  const text2 = new createjs.Text("以离子之力·塑像素之美", "bold 70px 微软雅黑, Microsoft YaHei", "#ffffff");
+  const text2 = new createjs.Text("以离子之力·塑像素之美", "bold 60px 微软雅黑, Microsoft YaHei", "#ffffff");
 
 
   text1.textAlign = "center";
@@ -169,7 +169,7 @@ function createTextParticles() {
   text2.x = 0;
   text2.y = 0;
   tempContainer.addChild(text2);
-  tempContainer.cache(-600, -60, 1200, 160);
+  tempContainer.cache(-600, -70, 1200, 160);
 
   const bounds2 = text2.getBounds();
   const centerY2 = centerY + 170;
