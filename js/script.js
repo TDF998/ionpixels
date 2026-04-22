@@ -139,7 +139,7 @@ function createTextParticles() {
   stage.addChild(textContainer);
 
   const text1 = new createjs.Text("离子像素", "bold 140px 微软雅黑, Microsoft YaHei", "#ffffff");
-  const text2 = new createjs.Text("ionpixels.com", "bold 60px 微软雅黑, Microsoft YaHei", "#ffffff");
+  const text2 = new createjs.Text("以离子之力·塑像素之美", "bold 60px 微软雅黑, Microsoft YaHei", "#ffffff");
 
 
   text1.textAlign = "center";
