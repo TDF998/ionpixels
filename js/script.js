@@ -139,7 +139,7 @@ function createTextParticles() {
   stage.addChild(textContainer);
 
   const text1 = new createjs.Text("离子像素", "bold 140px 微软雅黑, Microsoft YaHei", "#ffffff");
-  const text2 = new createjs.Text("ionpixels.com", "bold 60px 微软雅黑, Microsoft YaHei", "#ffffff");
+  const text2 = new createjs.Text("以离子之力-塑像素之美", "bold 100px 微软雅黑, Microsoft YaHei", "#ffffff");
 
 
   text1.textAlign = "center";
@@ -151,7 +151,7 @@ function createTextParticles() {
 
   const bounds1 = text1.getBounds();
   const centerX = stage.canvas.width / 2;
-  const centerY = stage.canvas.height / 2 - 60;
+  const centerY = stage.canvas.height / 2 - 130;
 
   for (let x = -bounds1.width / 2; x < bounds1.width / 2; x += 6) {
     for (let y = -bounds1.height / 2; y < bounds1.height / 2; y += 6) {
@@ -174,8 +174,8 @@ function createTextParticles() {
   const bounds2 = text2.getBounds();
   const centerY2 = centerY + 170;
 
-  for (let x = -bounds2.width / 2; x < bounds2.width / 2; x += 5) {
-    for (let y = -bounds2.height / 2; y < bounds2.height / 2; y += 5) {
+  for (let x = -bounds2.width / 2; x < bounds2.width / 2; x += 6) {
+    for (let y = -bounds2.height / 2; y < bounds2.height / 2; y += 6) {
       const pixel = tempContainer.cacheCanvas
         .getContext("2d")
         .getImageData(x + 600, y + 100, 1, 1).data;
