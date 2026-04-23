@@ -147,7 +147,7 @@ function createTextParticles() {
 
   const tempContainer = new createjs.Container();
   tempContainer.addChild(text1);
-  tempContainer.cache(-600, -30, 1200, 160);
+  tempContainer.cache(-600, -35, 1200, 160);
 
   const bounds1 = text1.getBounds();
   const centerX = stage.canvas.width / 2;
