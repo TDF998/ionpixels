@@ -715,7 +715,7 @@ html::before {
 #screen1 .content-overlay::before {
   content: '';
   position: absolute;
-  bottom: -80px; left: 0; right: 0;
+  bottom: -73px; left: 0; right: 0;
   height: 150px;
   pointer-events: none;
   z-index: -1;
