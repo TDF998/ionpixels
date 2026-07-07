@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>离子像素科技丨以离子之力·塑像素之美</title>
+  <title>离子像素科技品牌域名</title>
+
+  <!-- 基础 favicon -->
+  <link rel="icon" type="image/svg+xml" href="icon/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
+  <link rel="icon" href="icon/favicon.svg" type="image/png" sizes="16x16">
+  <link rel="icon" href="icon/favicon.svg" type="image/png" sizes="32x32">
+  <link rel="icon" href="icon/favicon.svg" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="icon/favicon.svg">
+  <link rel="manifest" href="icon/favicon.svg">
+
+  <!-- 样式 -->
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+
+  <!-- 脚本 -->
   <script src="./js/easeljs.min.js"></script>
-  <script src="./css/tailwind.css"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
   <script src="./js/swiper-bundle.min.js"></script>
-  <head>
-    <!-- 基础 favicon -->
-    <link rel="icon" type="image/svg+xml" href="icon/favicon.svg">
-    <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
-    <link rel="icon" href="icon/favicon.svg" type="image/svg" sizes="16x16">
-    <link rel="icon" href="icon/favicon.svg" type="image/svg" sizes="32x32">
-    <link rel="icon" href="icon/favicon.svg" type="image/svg" sizes="64x64">
-  
-    <!-- 苹果 Touch Icon（Safari/添加到主屏幕） -->
-    <link rel="apple-touch-icon" href="icon/favicon.svg">
-  
-    <!-- PWA 安卓图标 -->
-    <link rel="manifest" href="icon/favicon.svg">
-  </head>
-  
+  <script src="./css/tailwind.css"></script>
+
+  <!-- Tailwind 配置 -->
   <script>
     tailwind.config = {
       theme: {
@@ -42,29 +42,26 @@
       }
     }
   </script>
+
+  <!-- Tailwind 自定义工具类 (@apply 指令需在此解析) -->
   <style type="text/tailwindcss">
     @layer utilities {
-      /* 毛玻璃效果 */
       .backdrop-blur-custom {
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
       }
-      /* 整屏高度 */
       .screen-h {
         height: 100vh;
       }
-      /* 文字粒子容器 */
       .particle-text {
         position: relative;
         width: 100%;
         height: 200px;
         margin: 2rem 0;
       }
-      /* 导航激活/hover样式 */
       .nav-link {
         @apply px-4 py-2 transition-all duration-300 text-light hover:text-accent active:text-secondary;
       }
-      /* 按钮通用样式 */
       .btn {
         @apply px-8 py-3 rounded-lg font-medium transition-all duration-300 text-light;
       }
@@ -74,206 +71,18 @@
       .btn-outline {
         @apply border-2 border-accent hover:bg-accent/20 active:bg-accent/30;
       }
-      /* 模块卡片样式 */
       .card {
         @apply bg-primary/60 backdrop-blur-custom border border-light/10 rounded-xl p-6 transition-all duration-300 hover:border-accent/50 hover:scale-105;
       }
     }
-    /* 重置默认样式 */
-    * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft Yahei", sans-serif;
-        }
-        html, body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        .logo{background: linear-gradient(135deg, #ffffffe0, #ffffff4f);
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-        }
-    .text-2xl{
-    font-size: 1.5rem;
-    line-height:2.2rem;
-    }
-
-        /* 页面容器：用 flex 布局，垂直排列，占满整个高度 */
-        .page-container {
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* 页面主体：自动占满剩余空间，把 footer 挤到最底部 */
-        .main-content {
-            flex: 1;
-            /* 下面是测试内容，实际使用时替换为你的页面正文 */
-        }
-
-        /* 页脚整体样式 */
-        footer {
-          background-color: #01011b; width:100%;
-            color: #ecf0f1; /* 浅文字色 */
-            padding: 30px 20px 20px;/*  上下内边距 */
-             text-align:center;
-        }
-
-        /* 页脚内容容器（居中+限制宽度） */
-        .footer-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap; /* 响应式换行 */
-            justify-content: space-between;
-        }
-
-        /* 页脚各列样式 */
-        .footer-column {
-            flex: 1;
-            min-width: 250px; /* 手机端最小宽度，避免挤在一起 */
-            margin-bottom: 30px;
-            padding: 0 15px;
-        }
-
-        /* 列标题样式 */
-        .footer-column h3 {
-            font-size: 16px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #ffffff; /* 标题下划线 */
-            display: inline-block;
-        }
-
-        /* 链接列表样式 */
-        .footer-column ul {
-            list-style: none;
-            
-        }
-
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-column ul li a {
-            color: #bdc3c7;
-            text-decoration: none;
-            transition: color 0.3s; /*  hover 过渡效果 */
-        }
-
-        .footer-column ul li a:hover {
-            color: #3498db; /*  hover 变蓝色 */
-        }
-
-        /* 联系方式样式 */
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .contact-item i {
-            font-size: 16px;
-            margin-right: 10px;
-            color: #ffffff;
-        }
-
-        /* 版权信息栏 */
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            margin-top: 10px;
-            border-top: 1px solid #ffffff20;
-            font-size: 14px;
-            color: #bdc3c7;
-        }
-
-        /* 响应式适配（手机端） */
-        @media (max-width: 768px) {
-            .footer-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footer-column {
-                text-align: center;
-                min-width: 100%;
-            }
-        }
-
-      /* 弹幕舞台 — 占据剩余高度 */
-      .danmaku-stage {
-            width: 100%;
-            flex: 1;                 /* 自动填充剩余空间 */
-            height: calc(100% - 250px);           /* 防止flex溢出 */
-            background: radial-gradient(circle at 30% 40%, #030333, #01011b);
-            box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.8);
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* 滚动文字容器 */
-        .scrolling-words {
-            position: relative;
-            width: 100%;
-            height:100%;             /* 充满父容器 */
-            overflow: visible; 
-        }
-
-
-        /* 每一个弹幕项：统一白色，固定大小，圆角外框+1px描边 */
-        .word {
-            position: absolute;
-            white-space: nowrap;
-            left: 100%;                    /* 起始位于右侧外部 */
-            
-            /* 文字统一白色、固定大小 */
-            color: #ffffff;
-            font-size: 16px;                /* 统一大小，可调整，如希望更大或更小可改此值 */
-            font-weight: 400;
-            
-            /* 圆角外框 + 1px描边 (边框实现) */
-            border: 1px solid rgba(255, 255, 255, 0.4);   /* 半透明白色描边，增加层次感 */
-            border-radius: 30px;             /* 圆角外框，数值大一点保证圆润 */
-            padding: 8px 20px;               /* 内边距，让文字与外框有呼吸空间 */
-            background-color: transparent;   /* 完全透明背景 */
-            
-            /* 可选微弱的文字阴影，增强可读性（不影响整体要求） */
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-            
-            /* 透明度调节 —— 让每个框有深浅不同的透明感，背景透出，符合“透明背景”要求 */
-            opacity: 0.8;                     /* 基础透明度，后续通过内联随机覆盖 */
-            
-            /* 动画属性 - 拆开写，避免被覆盖 */
-            animation-name: scroll-left;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-            
-            /* 确保文字可见 */
-            z-index: 10;
-            
-            /* 保证框边缘平滑 */
-            box-sizing: border-box;
-            line-height: 1.2;
-            letter-spacing: 0.05em;
-        }
-        /* 滚动动画 */
-        @keyframes scroll-left {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-250vw);   /* 移动足够远保证任何长度文字完全移出左侧 */
-            }
-        }
-
   </style>
 </head>
 <body class="bg-primary text-light overflow-hidden ">
+  <div class="ambient">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
   <!-- 导航栏 - 毛玻璃效果 -->
   <nav class="fixed top-0 left-0 w-full z-50 bg-primary/40 backdrop-blur-custom border-b border-light/10 py-4">
@@ -286,7 +95,7 @@
         <a href="#screen1" class="nav-link">首页</a>
         <a href="#screen2" class="nav-link">商业价值</a>
         <a href="#screen3" class="nav-link">特色优势</a>
-        <a href="#screen4" class="nav-link">项目属性</a>
+        <a href="#screen4" class="nav-link">联系方式</a>
       </div>
       <!-- 移动端菜单按钮 -->
       <button class="md:hidden text-2xl" id="menuBtn">
@@ -299,7 +108,7 @@
         <a href="#screen1" class="nav-link">首页</a>
         <a href="#screen2" class="nav-link">商业价值</a>
         <a href="#screen3" class="nav-link">特色优势</a>
-        <a href="#screen4" class="nav-link">项目属性</a>
+        <a href="#screen4" class="nav-link">联系方式</a>
       </div>
     </div>
   </nav>
@@ -312,7 +121,7 @@
         <canvas id="heroCanvas" width="1920" height="900"></canvas>
         <div class="content-overlay">
           <div class="cta-container">
-            <a href="#" class="cta-button primary-cta" id="buyBtn">立即加入</a>
+            <a href="#" class="cta-button primary-cta" id="buyBtn">立即购买</a>
             <a href="#" class="cta-button secondary-cta" id="valueBtn">了解价值</a>
           </div>
         </div>
@@ -361,7 +170,7 @@
             长度：9 字符（ion+pixels），属于易记、品牌友好长度<br>
             含义：ion（离子 / 电离）+ pixels（像素），直接指向图像传感、光电、AI 视觉、半导体、显示技术等高增长科技赛道，行业属性极强、无歧义<br>
             品相：纯英文组合、无数字 / 符号、发音流畅（ion-pixels），适合做科技公司 / 产品品牌<br>
-            市场热度：pixels 是图像 / 视觉领域高频词，ion 是半导体 / 传感核心词，双关键词叠加，适配终端项目</p>
+            市场热度：pixels 是图像 / 视觉领域高频词，ion 是半导体 / 传感核心词，双关键词叠加，适配终端买家</p>
         </div>
       </div>
 
@@ -413,29 +222,29 @@
         </div>
       </div>
 
-      <!-- 第四屏：项目属性 -->
+      <!-- 第四屏：联系我们 -->
       <div class="swiper-slide screen-h flex items-center justify-center py-20" id="screen4">
         <div class="container mx-auto px-4 md:px-8 z-10">
           <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">项目属性</h2>
-            <p class="text-lg text-light/80 max-w-2xl mx-auto">个人研究项目</p>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">联系我们</h2>
+            <p class="text-lg text-light/80 max-w-2xl mx-auto">如有意购买或了解更多信息，请通过以下方式联系我们</p>
           </div>
-          <!-- 项目内容：左联系方式 右域名信息 -->
+          <!-- 联系内容：左联系方式 右域名信息 -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <!-- 不是联系方式 -->
+            <!-- 联系方式 -->
             <div class="bg-primary/60 backdrop-blur-custom border border-light/10 rounded-2xl p-8 flex flex-col items-center gap-8">
               <div class="text-5xl text-accent mb-4"><i class="fas fa-contact-card"></i></div>
-              <!-- SLOGAN -->
+              <!-- 邮箱 -->
               <div class="flex items-center gap-4 w-full max-w-md">
                 <div class="text-2xl text-accent w-10 text-center"><i class="fas fa-envelope"></i></div>
-                <p class="text-lg">以离子之力丨塑像素之美</p>
+                <p class="text-lg">907488570@qq.com</p>
               </div>
-              <!-- SLOGAN -->
+              <!-- 电话 -->
               <div class="flex items-center gap-4 w-full max-w-md">
                 <div class="text-2xl text-accent w-10 text-center"><i class="fas fa-phone"></i></div>
-                <p class="text-lg">离子新生丨像素造境</p>
+                <p class="text-lg">壹伍柒叁叁壹贰零肆零贰&nbsp;需注明来意</p>
               </div>
-              <!-- 不是二维码 -->
+              <!-- 二维码 -->
               <div class="bg-light p-2 rounded-lg">
                 <div class="w-40 h-40 bg-primary/80 flex items-center justify-center text-light/50">
                   <img src="./icon/wx.jpg" width="160" height="160">
@@ -447,15 +256,15 @@
               <h3 class="text-2xl font-semibold mb-6 text-center">域名信息</h3>
               <div class="grid grid-cols-2 gap-6">
                 <p class="text-light/70">域名:</p>
-                <p class="font-medium">ionpixels.com</p>
+                <p class="font-medium">ionpixels.com&nbsp;/&nbsp;ionpixels.cn</p>
                 <p class="text-light/70">注册商:</p>
-                <p class="font-medium">无可奉告</p>
+                <p class="font-medium">阿里云</p>
                 <p class="text-light/70">注册时间:</p>
-                <p class="font-medium">猴年马月</p>
+                <p class="font-medium">2026年3月</p>
                 <p class="text-light/70">到期时间:</p>
                 <p class="font-medium">无固定期限</p>
                 <p class="text-light/70">状态:</p>
-                <p class="font-medium text-accent">正常访问</p>
+                <p class="font-medium text-accent">可转让</p>
               </div>
             </div>
           </div>
@@ -479,29 +288,29 @@
                   <div class="footer-container">
                       <!-- 第一列：快速导航 -->
                       <div class="footer-column">
-                          <h3>方便自己的域名导航</h3>
+                          <h3>域名导航</h3>
                           <ul>
-                              <li><a href="https://qilinev.com/" target="_blank" rel="noopener noreferrer">Qilinev.com</a></li>
-                              <li><a href="https://tokenbag.cn" target="_blank" rel="noopener noreferrer">TokenBag.cn</a></li>
-                              <li><a href="https://metadataws.com//" target="_blank" rel="noopener noreferrer">Metadataws.com</a></li>
-                              <li><a href="https://lemoclaw.com/" target="_blank" rel="noopener noreferrer">LemoClaw.com</a></li>
+                              <li><a href="qiliev.com">QILINEV.COM</a></li>
+                              <li><a href="###">IONPIXELS.CN</a></li>
+                              <li><a href="tokenbag.cn">TOKENBAG.CN</a></li>
+                              <li><a href="ionpixels.com">IONPIXELS.COM</a></li>
                           </ul>
-                          </div>
+                      </div>
           
                       <!-- 第二列：联系方式 -->
                       <div class="footer-column">
                           <h3>联系我们</h3>
                           <ul>
                               <li><i class="fas fa-map-marker-alt"></i>
-                                  <span>未来的事业布局丨本网站仅供个人研究项目演示</span>
+                                  <span>北京市朝阳区某某大厦8888室</span>
                               </li>
                               <li>
                                   <i class="fas fa-phone"></i>
-                                  <span>玖伍贰柒玖伍贰柒玖伍贰柒（非商业项目）</span>
+                                  <span>壹伍柒叁叁壹贰零肆零贰（需注明来意）</span>
                               </li>
                               <li>
                                   <i class="fas fa-envelope"></i>
-                                  <span>XXXXXXXX@ionpixsels.com</span>
+                                  <span>907488570@qq.com</span>
                               </li>
                           </ul>
                       </div>
@@ -512,14 +321,14 @@
                           <ul>
                               <li><a href="#"><i class="fab fa-weixin"></i> 微信公众号</a></li>
                               <li><a href="#"><i class="fab fa-weibo"></i> 新浪微博</a></li>
-                              <li><a href="#"><i class="fab fa-weixin"></i> WeChat</a></li>
+                              <li><a href="#"><i class="fab fa-weixin"></i> WeChat：DOUBLE-UT</a></li>
                           </ul>
                       </div>
                   </div>
                   <!-- 版权信息 -->
                   <div class="copyright">
                       <p>© 2026 离子像素科技有限公司 版权所有 | 京ICP备12345678号-1</p>
-                      <p>本网站支持IPv6访问 | 隐私政策 | 服务条款丨本网站仅做个人研究项目展示使用</p>
+                      <p>本网站支持IPv6访问 | 隐私政策 | 服务条款</p>
                   </div>
               </div>
           </div>
@@ -579,6 +388,8 @@
         menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
       });
     });
+
+
 
     (function() {
             // 基础词组 —— 延续忘我氛围
@@ -724,6 +535,94 @@
             console.log('弹幕舞台高度:', document.querySelector('.danmaku-stage')?.offsetHeight);
 
         })();
+  </script>
+  <!-- ==========================================
+       暗色科技基因 JS增强 — 光扫 + 粒子色彩
+       ========================================== -->
+  <script>
+    (function() {
+      /* 1. 为所有卡片注入光扫层 */
+      const cards = document.querySelectorAll('.card, #screen3 .bg-primary\\/60, #screen4 .bg-primary\\/60');
+      cards.forEach(function(card) {
+        if (card.querySelector('.card-light-sweep')) return;
+        var sweep = document.createElement('div');
+        sweep.className = 'card-light-sweep';
+        card.appendChild(sweep);
+        card.addEventListener('mouseenter', function() {
+          sweep.style.animation = 'none';
+          sweep.offsetHeight;
+          sweep.style.animation = 'lightSweep 0.8s ease-out';
+        });
+      });
+
+      /* 2. 增强粒子Canvas色彩 — 添加青紫渐变粒子 */
+      if (typeof createjs !== 'undefined' && document.getElementById('heroCanvas')) {
+        var originalCreateBackgroundParticles = window.createBackgroundParticles;
+        var canvas = document.getElementById('heroCanvas');
+        var ctx2d = canvas.getContext('2d');
+
+        /* 注入额外彩色辉光粒子（非侵入式，在原Canvas上层叠） */
+        var glowCanvas = document.createElement('canvas');
+        glowCanvas.id = 'glowCanvas';
+        glowCanvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:3;';
+        canvas.parentNode.appendChild(glowCanvas);
+        glowCanvas.width = canvas.width;
+        glowCanvas.height = canvas.height;
+
+        var gctx = glowCanvas.getContext('2d');
+        var glowParticles = [];
+        var GLOW_COUNT = 30;
+
+        function createGlowParticle() {
+          return {
+            x: Math.random() * glowCanvas.width,
+            y: Math.random() * glowCanvas.height,
+            vx: (Math.random() - 0.5) * 0.25,
+            vy: (Math.random() - 0.5) * 0.25 - 0.1,
+            size: Math.random() * 2 + 0.5,
+            alpha: Math.random() * 0.5 + 0.1,
+            hue: Math.random() > 0.5 ? 190 : 260,
+            life: 1
+          };
+        }
+
+        for (var i = 0; i < GLOW_COUNT; i++) {
+          glowParticles.push(createGlowParticle());
+        }
+
+        function animateGlow() {
+          gctx.clearRect(0, 0, glowCanvas.width, glowCanvas.height);
+          glowParticles.forEach(function(p) {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.life -= 0.0003;
+            if (p.life <= 0 || p.y < -20) {
+              var np = createGlowParticle();
+              p.x = np.x; p.y = glowCanvas.height + 10; p.vx = np.vx;
+              p.vy = np.vy; p.size = np.size; p.alpha = np.alpha;
+              p.hue = np.hue; p.life = 1;
+            }
+            gctx.beginPath();
+            gctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            gctx.fillStyle = 'hsla(' + p.hue + ', 100%, 65%, ' + (p.alpha * p.life) + ')';
+            gctx.fill();
+            /* 辉光 */
+            gctx.beginPath();
+            gctx.arc(p.x, p.y, p.size * 2.5, 0, Math.PI * 2);
+            gctx.fillStyle = 'hsla(' + p.hue + ', 100%, 65%, ' + (p.alpha * p.life * 0.3) + ')';
+            gctx.fill();
+          });
+          requestAnimationFrame(animateGlow);
+        }
+        animateGlow();
+
+        /* 响应式更新 */
+        window.addEventListener('resize', function() {
+          glowCanvas.width = canvas.width;
+          glowCanvas.height = canvas.height;
+        });
+      }
+    })();
   </script>
 </body>
 </html>
