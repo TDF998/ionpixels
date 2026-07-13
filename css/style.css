@@ -263,7 +263,7 @@ html, body {
 
 /* 页脚整体样式 */
 footer {
-  background-color: #01011b;
+  background-color: rgb(1, 1, 27);
   width: 100%;
   color: #ecf0f1;
   padding: 30px 20px 20px;
@@ -893,8 +893,77 @@ body::after {
   filter: brightness(1.1) contrast(1.05);
 }
 
-/* ===== 响应式适配 ===== */
+/* =========================================================
+   响应式适配 —— 移动端
+   仅修改手机端：关闭 Swiper 整屏定高，改为正常文档流滚动。
+   PC 端（>768px）保持整屏垂直滑动，逻辑完全不变。
+   ========================================================= */
 @media (max-width: 768px) {
+  /* 1. 放开整页滚动：覆盖 body 的 overflow-hidden 与 html/body 的定高 */
+  html, body {
+    height: auto !important;
+    overflow: auto !important;     /* 允许整页纵向滚动 */
+    overflow-x: hidden !important; /* 但禁止横向溢出（页脚大图等） */
+  }
+  body {
+    position: static;
+  }
+
+  /* 2. 关闭 Swiper 的整屏容器约束，恢复成普通块级流 */
+  .swiper.mySwiper {
+    height: auto !important;       /* 抵消 Tailwind h-screen(100vh) */
+    overflow: visible !important;  /* 抵消 swiper 自带 overflow:hidden */
+  }
+  .swiper-wrapper {
+    display: block !important;     /* 取消 flex 横向/纵向排列 */
+    flex-direction: column !important;
+    transform: none !important;    /* 清掉 swiper 切换的位移 */
+    height: auto !important;
+  }
+  .swiper-slide {
+    height: auto !important;       /* 内容多就自然撑高，不再被压在一屏 */
+    min-height: auto !important;
+    width: 100% !important;
+    /* 顶部给固定导航留白，底部留呼吸空间（覆盖原本 10rem 过大内边距） */
+    padding: 6rem 0 4rem !important;
+  }
+
+  /* 整屏高度类：移动端改为「至少一屏、可自然增长」 */
+  .screen-h {
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+
+  /* 3. 隐藏整屏滑动的导航点（移动端用原生滚动） */
+  .swiper-pagination {
+    display: none !important;
+  }
+
+  /* 4. 首屏 hero：保留整屏观感，避免按钮被 560px 大 margin 挤出视口 */
+  #screen1.hero-container {
+    min-height: 100vh !important;  /* 抵消基础样式里的 800px 定高 */
+    height: auto;
+    padding: 0 !important;         /* hero 不需要顶部留白 */
+  }
+  .cta-container {
+    margin-top: 45vh;              /* 按钮落在首屏下半部分 */
+  }
+
+  /* 5. 第五屏（弹幕 + 页脚）：自然高度，弹幕区给个最小高度 */
+  #screen .page-container {
+    height: auto !important;
+    min-height: 100vh;
+  }
+  #screen .danmaku-stage {
+    min-height: 45vh;
+  }
+
+  /* 6. 卡片间距收紧，移动端单列更舒适 */
+  .grid {
+    gap: 1.25rem !important;
+  }
+
+  /* 7. 页脚改为单列居中 */
   .footer-container {
     flex-direction: column;
     align-items: center;
@@ -903,9 +972,8 @@ body::after {
     text-align: center;
     min-width: 100%;
   }
-  .swiper-slide {
-    padding: 10rem 0;
-  }
+
+  /* 8. 弱化装饰层开销 & 关闭手机上无意义的交互余光 */
   body::before,
   body::after {
     opacity: 0.02;
