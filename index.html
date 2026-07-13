@@ -16,6 +16,7 @@
 
   <!-- 样式 -->
   <link rel="stylesheet" href="./css/style.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.0/css/all.min.css">
   <link rel="stylesheet" href="./css/swiper-bundle.min.css">
 
@@ -352,40 +353,53 @@
     });
 
     // 整屏滚动配置
-    const swiper = new Swiper('.mySwiper', {
-      direction: 'vertical',
-      slidesPerView: 1,
-      spaceBetween: 0,
-      mousewheel: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
+    // 仅 PC 端（>768px）启用 Swiper 整屏垂直滑动；移动端不初始化，
+    // 改由 CSS 恢复为正常文档流，导航/按钮使用原生平滑滚动。
+    const isDesktop = window.matchMedia('(min-width: 769px)').matches;
+    let swiper = null;
+    if (isDesktop) {
+      swiper = new Swiper('.mySwiper', {
+        direction: 'vertical',
+        slidesPerView: 1,
+        spaceBetween: 0,
+        mousewheel: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    }
+
+    // 统一的区块跳转：PC 用 Swiper 切屏，移动端用原生平滑滚动
+    function goToSection(slideIndex, targetId) {
+      if (swiper) {
+        swiper.slideTo(slideIndex);
+      } else if (targetId) {
+        const el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+      mobileMenu.classList.add('hidden');
+      menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+    }
 
     // 按钮跳转
     document.getElementById('buyBtn').addEventListener('click', () => {
-      swiper.slideTo(3); // 跳转到第四屏
-      mobileMenu.classList.add('hidden');
-      menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+      goToSection(3, 'screen4'); // 跳转到第四屏
     });
     document.getElementById('valueBtn').addEventListener('click', () => {
-      swiper.slideTo(1); // 跳转到第二屏
-      mobileMenu.classList.add('hidden');
-      menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+      goToSection(1, 'screen2'); // 跳转到第二屏
     });
 
     // 导航链接跳转
+    const navTargetIds = ['screen1', 'screen2', 'screen3', 'screen4'];
     document.querySelectorAll('.nav-link').forEach((link, index) => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        swiper.slideTo(index);
-        mobileMenu.classList.add('hidden');
-        menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        goToSection(index, navTargetIds[index]);
       });
     });
 
@@ -435,7 +449,7 @@
 
             // 随机动画时长 (速度) 12s ~ 36s
             function randomDuration() {
-                return (16 + Math.random() * 26).toFixed(1) + 's';
+                return (20 + Math.random() * 30).toFixed(1) + 's';
             }
 
             // 随机延迟 0s ~ 16s 错峰
